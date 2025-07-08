@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TOEFL Junior Reading with Analysis</title>
+    <!-- All CSS and HTML structure is the same as your original file -->
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 20px auto; padding: 25px; border: 1px solid #ddd; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+        h3 { margin-top: 30px; }
+        p { margin: 1em 0; }
+        .passage-box { background-color: #f8f9fa; border: 1px solid #dee2e6; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-family: "Times New Roman", Times, serif; }
+        .student-info { margin-bottom: 20px; padding: 15px; background-color: #f9f9f9; border: 1px solid #eee; border-radius: 5px; }
+        .student-info label { font-weight: bold; margin-right: 10px; }
+        .student-info input[type="text"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 60%; }
+        .question { margin-bottom: 25px; padding-left: 15px; border-left: 3px solid #f1f1f1; }
+        .options { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+        .options input[type="radio"] { display: none; }
+        .options label { padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; transition: background-color 0.2s, border-color 0.2s; }
+        .options label:hover { background-color: #f0f0f0; border-color: #999; }
+        .options input[type="radio"]:checked + label { background-color: #d1e7fd; border-color: #0d6efd; font-weight: bold; }
+        .options label.correct { background-color: #d1e7dd !important; border-color: #198754 !important; color: #0f5132; }
+        .options label.incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #842029; }
+        #submitBtn { display: block; width: 100%; padding: 15px; font-size: 1.2em; font-weight: bold; color: white; background-color: #0d6efd; border: none; border-radius: 5px; cursor: pointer; margin-top: 30px; }
+        #submitBtn:hover { background-color: #0b5ed7; }
+        #submitBtn:disabled { background-color: #aaa; cursor: not-allowed; }
+        #results { margin-top: 40px; padding: 20px; border-radius: 5px; text-align: center; display: none; background-color: #f0f8ff; border: 1px solid #d1e7fd; }
+        #results h2, #results h3 { margin: 0; padding: 0; border: none; }
+        #results h3 { font-size: 1.5em; margin-top: 10px; }
+        strong { font-weight: bold; }
+        hr { border: 0; height: 1px; background: #ddd; margin: 40px 0; }
+    </style>
+</head>
+<body>
+    <h2>Reading Comprehension: Question Set 1</h2>
+    <p>Enter your name, then read each passage and click an answer for each question. When you are finished, press the "Submit Answers" button at the bottom to see your score and have your results recorded. This is not obligatory 2025 summer homework - Teacher Jonathan's trying to create a website and is not yet very good at it so he needs people to help him test it.</p>
+    
+    <div class="student-info">
+        <label for="studentName">Enter Your Name:</label>
+        <input type="text" id="studentName" name="studentName" placeholder="e.g., Jane Doe" required>
+    </div>
+
+    <hr>
+    <!-- The entire quiz form HTML from Q1 to Q20 is identical to your original file. -->
+    <form id="quizForm">
+        <h3>Questions 1-4 are about the following announcement.</h3>
+        <div class="passage-box">
+            <p><strong>Announcing the 3rd Annual Oakridge Student Inventors' Challenge!</strong></p>
+            <p>Do you have a great idea that could change the world, or at least make everyday life a little easier? Oakridge Middle School invites all students to participate in our annual Inventors' Challenge!</p>
+            <p>The goal is to design and build an original invention that solves a common problem. Your creation can be simple or complex, but it must be your own work. Students may work alone or in teams of up to three people.</p>
+            <p>The main event will <strong>showcase</strong> all inventions on Friday, November 18th, in the school library from 4:00 p.m. to 6:00 p.m. A panel of science teachers will judge the entries based on creativity, usefulness, and the quality of the presentation.</p>
+            <p>To participate, you must register your project with Mr. Davison in the science lab by Friday, October 28th. He will provide you with the official entry forms and a full list of rules.</p>
+        </div>
+
+        <div class="question" id="q1">
+            <p><strong>1. What must an invention do to be successful in the challenge?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q1" id="q1a" value="A"><label for="q1a">(A) Be very complex</label></div>
+                <div><input type="radio" name="q1" id="q1b" value="B"><label for="q1b">(B) Be entered by a team</label></div>
+                <div><input type="radio" name="q1" id="q1c" value="C"><label for="q1c">(C) Solve a common problem</label></div>
+                <div><input type="radio" name="q1" id="q1d" value="D"><label for="q1d">(D) Be presented by Mr. Davison</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q2">
+            <p><strong>2. In the announcement, the word <code>showcase</code> is closest in meaning to</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q2" id="q2a" value="A"><label for="q2a">(A) display</label></div>
+                <div><input type="radio" name="q2" id="q2b" value="B"><label for="q2b">(B) sell</label></div>
+                <div><input type="radio" name="q2" id="q2c" value="C"><label for="q2c">(C) hide</label></div>
+                <div><input type="radio" name="q2" id="q2d" value="D"><label for="q2d">(D) judge</label></div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <p><strong>3. What is the first thing students must do to enter the challenge?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q3" id="q3a" value="A"><label for="q3a">(A) Build their invention</label></div>
+                <div><input type="radio" name="q3" id="q3b" value="B"><label for="q3b">(B) Form a team of three</label></div>
+                <div><input type="radio" name="q3" id="q3c" value="C"><label for="q3c">(C) Register with Mr. Davison</label></div>
+                <div><input type="radio" name="q3" id="q3d" value="D"><label for="q3d">(D) Prepare a presentation</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q4">
+            <p><strong>4. Who will decide the winner of the competition?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q4" id="q4a" value="A"><label for="q4a">(A) The school principal</label></div>
+                <div><input type="radio" name="q4" id="q4b" value="B"><label for="q4b">(B) Mr. Davison</label></div>
+                <div><input type="radio" name="q4" id="q4c" value="C"><label for="q4c">(C) A panel of students</label></div>
+                <div><input type="radio" name="q4" id="q4d" value="D"><label for="q4d">(D) A group of science teachers</label></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3>Questions 5-11 are about the following story.</h3>
+        <div class="passage-box">
+            <p><em>Line 1</em>    Maya raised a hand, signaling for Ben to stop. They moved <strong>cautiously</strong> through the dense undergrowth, the silence of the forest broken only by the crunch of leaves under their boots. For two days, they had been tracking the large black bear. It wasn't a hunt for sport; this was a rescue mission, both for the bear and for the small town it had been visiting.</p>
+            <p><em>Line 5</em>    "Paw prints are fresh," Ben whispered, pointing to the deep impressions in the soft earth. "It can't be far." The bear had been seen wandering through neighborhood gardens, a gentle giant that was nonetheless causing panic among the residents. The rangers' job was to find it, tranquilize it, and move it to a remote national park, far from human contact.</p>
+            <p><em>Line 10</em>   Suddenly, a twig snapped loudly to their right. Both rangers froze. Peering through the thick foliage, Maya saw a patch of black fur. It was the bear, foraging for berries near a stream. It hadn't seen them. This was their chance.</p>
+            <p><em>Line 15</em>   Maya slowly raised the tranquilizer rifle to her shoulder, taking careful aim. She knew she had to make this first shot count. A missed or poorly placed shot could startle the animal, making a second attempt much more difficult and dangerous. She took a deep breath, let it out slowly, and squeezed the trigger. There was a soft <em>hiss</em> as the dart flew through the air and hit the bear's shoulder. The large animal grunted in surprise but soon grew drowsy, slumping to the ground.</p>
+            <p><em>Line 20</em>   "Good shot," Ben said, relief clear in his voice. "Now the real work begins." They would have to work quickly to check the bear's health and prepare it for its long journey to a new, safer home.</p>
+        </div>
+
+        <div class="question" id="q5">
+            <p><strong>5. What is the best title for this story?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q5" id="q5a" value="A"><label for="q5a">(A) The Dangers of the Forest</label></div>
+                <div><input type="radio" name="q5" id="q5b" value="B"><label for="q5b">(B) A Bear's New Home</label></div>
+                <div><input type="radio" name="q5" id="q5c" value="C"><label for="q5c">(C) Two Friends on an Adventure</label></div>
+                <div><input type="radio" name="q5" id="q5d" value="D"><label for="q5d">(D) The Perfect Hunt</label></div>
+            </div>
+        </div>
+        
+        <div class="question" id="q6">
+            <p><strong>6. In line 1, the word <code>cautiously</code> is closest in meaning to</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q6" id="q6a" value="A"><label for="q6a">(A) quickly</label></div>
+                <div><input type="radio" name="q6" id="q6b" value="B"><label for="q6b">(B) quietly</label></div>
+                <div><input type="radio" name="q6" id="q6c" value="C"><label for="q6c">(C) carefully</label></div>
+                <div><input type="radio" name="q6" id="q6d" value="D"><label for="q6d">(D) nervously</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q7">
+            <p><strong>7. Why do Maya and Ben need to find the bear?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q7" id="q7a" value="A"><label for="q7a">(A) It has been hurting people in a nearby town.</label></div>
+                <div><input type="radio" name="q7" id="q7b" value="B"><label for="q7b">(B) They want to sell its fur.</label></div>
+                <div><input type="radio" name="q7" id="q7c" value="C"><label for="q7c">(C) It has been wandering too close to human homes.</label></div>
+                <div><input type="radio" name="q7" id="q7d" value="D"><label for="q7d">(D) They are studying its diet of berries.</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q8">
+            <p><strong>8. Why did Maya need to be careful with her first shot?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q8" id="q8a" value="A"><label for="q8a">(A) The rifle was very loud.</label></div>
+                <div><input type="radio" name="q8" id="q8b" value="B"><label for="q8b">(B) She did not want to injure the bear permanently.</label></div>
+                <div><input type="radio" name="q8" id="q8c" value="C"><label for="q8c">(C) The bear might run away if she missed.</label></div>
+                <div><input type="radio" name="q8" id="q8d" value="D"><label for="q8d">(D) She only had one tranquilizer dart with her.</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q9">
+            <p><strong>9. At the end of the story, all of the following will happen EXCEPT</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q9" id="q9a" value="A"><label for="q9a">(A) The rangers will check the bear's health.</label></div>
+                <div><input type="radio" name="q9" id="q9b" value="B"><label for="q9b">(B) The bear will be left in the forest to wake up.</label></div>
+                <div><input type="radio" name="q9" id="q9c" value="C"><label for="q9c">(C) The bear will be prepared for a journey.</label></div>
+                <div><input type="radio" name="q9" id="q9d" value="D"><label for="q9d">(D) The bear will be moved to a new location.</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q10">
+            <p><strong>10. What does Ben mean when he says, "Now the real work begins" (line 20)?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q10" id="q10a" value="A"><label for="q10a">(A) He is worried the bear will wake up soon.</label></div>
+                <div><input type="radio" name="q10" id="q10b" value="B"><label for="q10b">(B) He thinks tracking the bear was easy.</label></div>
+                <div><input type="radio" name="q10" id="q10c" value="C"><label for="q10c">(C) Moving the large, sleeping bear will be very difficult.</label></div>
+                <div><input type="radio" name="q10" id="q10d" value="D"><label for="q10d">(D) They have to find more bears in the forest.</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q11">
+            <p><strong>11. Why do the rangers use a tranquilizer rifle instead of a normal one?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q11" id="q11a" value="A"><label for="q11a">(A) They want to put the bear to sleep, not harm it.</label></div>
+                <div><input type="radio" name="q11" id="q11b" value="B"><label for="q11b">(B) It is the only type of rifle they are allowed to use.</label></div>
+                <div><input type="radio" name="q11" id="q11c" value="C"><label for="q11c">(C) It makes less noise and is easier to aim.</label></div>
+                <div><input type="radio" name="q11" id="q11d" value="D"><label for="q11d">(D) The town residents asked them to use it.</label></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3>Questions 12-20 are about the following passage.</h3>
+        <div class="passage-box">
+            <p><em>Line 1</em>    On the edge of the Gobi Desert in northwestern China lies Dunhuang, an oasis city that once served as a vital <strong>hub</strong> on the ancient Silk Road. For over a thousand years, this desert outpost was a major junction for trade and a crossroads where cultures from the East and West met and mixed. However, Dunhuang is most famous today for a treasure it held secret for centuries: the Mogao Caves.</p>
+            <p><em>Line 5</em>    Also known as the Caves of the Thousand Buddhas, the Mogao complex is a stunning collection of 492 temples carved directly into a cliff face. Beginning in the fourth century CE, Buddhist monks began carving these grottoes as places of meditation and worship. Over the next thousand years, generations of artists filled the caves with an astonishing array of Buddhist murals and painted sculptures. These artworks provide a priceless record of the evolution of Buddhist art and the daily life of the people on the Silk Road.</p>
+            <p><em>Line 10</em>   The most significant discovery at Mogao occurred in 1900, when a monk stumbled upon a sealed-off chamber. This "Library Cave" contained a massive hoard of over 50,000 ancient manuscripts. <strong>They</strong> had been sealed away in the eleventh century and remained untouched for 800 years. The documents included Buddhist texts, official records, and personal letters written in more than a dozen different languages. This discovery opened an unparalleled window into the history of China and Central Asia.</p>
+            <p><em>Line 15</em>   Unfortunately, the delicate murals and sculptures are threatened by environmental factors. Changes in humidity and temperature caused by the large number of tourists visiting the caves can cause the painted plaster to flake and fade. To preserve this world heritage site, authorities have sharply limited the number of visitors allowed inside the caves each day and have built a state-of-the-art visitor center where digital reproductions of the art can be viewed.</p>
+        </div>
+
+        <div class="question" id="q12">
+            <p><strong>12. What is the main purpose of the passage?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q12" id="q12a" value="A"><label for="q12a">(A) To explain how to travel on the Silk Road</label></div>
+                <div><input type="radio" name="q12" id="q12b" value="B"><label for="q12b">(B) To describe the discovery and importance of the Mogao Caves</label></div>
+                <div><input type="radio" name="q12" id="q12c" value="C"><label for="q12c">(C) To discuss the life of Buddhist monks in ancient China</label></div>
+                <div><input type="radio" name="q12" id="q12d" value="D"><label for="q12d">(D) To argue for more tourism in the Gobi Desert</label></div>
+            </div>
+        </div>
+        
+        <div class="question" id="q13">
+            <p><strong>13. In line 2, the word <code>hub</code> is closest in meaning to</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q13" id="q13a" value="A"><label for="q13a">(A) border</label></div>
+                <div><input type="radio" name="q13" id="q13b" value="B"><label for="q13b">(B) mountain</label></div>
+                <div><input type="radio" name="q13" id="q13c" value="C"><label for="q13c">(C) village</label></div>
+                <div><input type="radio" name="q13" id="q13d" value="D"><label for="q13d">(D) center</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q14">
+            <p><strong>14. What can be inferred about the artists who worked on the Mogao Caves?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q14" id="q14a" value="A"><label for="q14a">(A) They were all from the same family.</label></div>
+                <div><input type="radio" name="q14" id="q14b" value="B"><label for="q14b">(B) They worked for a very long period of time.</label></div>
+                <div><input type="radio" name="q14" id="q14c" value="C"><label for="q14c">(C) They were all famous monks.</label></div>
+                <div><input type="radio" name="q14" id="q14d" value="D"><label for="q14d">(D) They used only one color of paint.</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q15">
+            <p><strong>15. In line 11, the word <code>They</code> refers to</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q15" id="q15a" value="A"><label for="q15a">(A) the monks</label></div>
+                <div><input type="radio" name="q15" id="q15b" value="B"><label for="q15b">(B) the caves</label></div>
+                <div><input type="radio" name="q15" id="q15c" value="C"><label for="q15c">(C) the manuscripts</label></div>
+                <div><input type="radio" name="q15" id="q15d" value="D"><label for="q15d">(D) the languages</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q16">
+            <p><strong>16. Why was the discovery of the "Library Cave" so important?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q16" id="q16a" value="A"><label for="q16a">(A) It was the largest cave in the complex.</label></div>
+                <div><input type="radio" name="q16" id="q16b" value="B"><label for="q16b">(B) It contained gold and other treasure.</label></div>
+                <div><input type="radio" name="q16" id="q16c" value="C"><label for="q16c">(C) It held a huge collection of well-preserved historical documents.</label></div>
+                <div><input type="radio" name="q16" id="q16d" value="D"><label for="q16d">(D) It showed where the Silk Road began.</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q17">
+            <p><strong>17. What is the main significance of the artwork found in the caves?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q17" id="q17a" value="A"><label for="q17a">(A) The art helps us understand the history of the region.</label></div>
+                <div><input type="radio" name="q17" id="q17b" value="B"><label for="q17b">(B) The art is now displayed in museums around the world.</label></div>
+                <div><input type="radio" name="q17" id="q17c" value="C"><label for="q17c">(C) The art shows that Buddhism was the only religion in the area.</label></div>
+                <div><input type="radio" name="q17" id="q17d" value="D"><label for="q17d">(D) The art is less interesting than the sculptures.</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q18">
+            <p><strong>18. According to the passage, the art in the Mogao Caves is threatened by all of the following EXCEPT</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q18" id="q18a" value="A"><label for="q18a">(A) changes in temperature</label></div>
+                <div><input type="radio" name="q18" id="q18b" value="B"><label for="q18b">(B) too many visitors</label></div>
+                <div><input type="radio" name="q18" id="q18c" value="C"><label for="q18c">(C) changes in moisture</label></div>
+                <div><input type="radio" name="q18" id="q18d" value="D"><label for="q18d">(D) desert sandstorms</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q19">
+            <p><strong>19. What has been done to protect the caves?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q19" id="q19a" value="A"><label for="q19a">(A) The caves have been permanently sealed.</label></div>
+                <div><input type="radio" name="q19" id="q19b" value="B"><label for="q19b">(B) The art has been moved to a new location.</label></div>
+                <div><input type="radio" name="q19" id="q19c" value="C"><label for="q19c">(C) Digital versions of the art have been created.</label></div>
+                <div><input type="radio" name="q19" id="q19d" value="D"><label for="q19d">(D) All of the murals have been repainted.</label></div>
+            </div>
+        </div>
+
+        <div class="question" id="q20">
+            <p><strong>20. Based on the passage, what is probably true about the Silk Road?</strong></p>
+            <div class="options">
+                <div><input type="radio" name="q20" id="q20a" value="A"><label for="q20a">(A) It was mainly used by monks.</label></div>
+                <div><input type="radio" name="q20" id="q20b" value="B"><label for="q20b">(B) It passed through many different cultures.</label></div>
+                <div><input type="radio" name="q20" id="q20c" value="C"><label for="q20c">(C) It was a short and easy route to travel.</label></div>
+                <div><input type="radio" name="q20" id="q20d" value="D"><label for="q20d">(D) It was only used for trading silk.</label></div>
+            </div>
+        </div>
+        
+        <button type="button" id="submitBtn">Submit Answers</button>
+    </form>
+
+    <div id="results"></div>
+
+
+<script>
+    // PASTE YOUR NEWEST WEB APP URL HERE
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw1KYQH8UxOlx_eo9BsjphG9arc7u97FA0sV0vjGRGK1f_sXAWCJwKyIrXY0z_aB5coFg/exec'; // <-- IMPORTANT: REPLACE THIS
+
+    const correctAnswers = {
+        q1: 'C', q2: 'A', q3: 'C', q4: 'D', q5: 'B', q6: 'C', q7: 'C', q8: 'C', q9: 'B', q10: 'C', 
+        q11: 'A', q12: 'B', q13: 'D', q14: 'B', q15: 'C', q16: 'C', q17: 'A', q18: 'D', q19: 'C', q20: 'B'
+    };
+    
+    // --- NEW: ERROR ANALYSIS DATABASE ---
+    // This object maps each incorrect answer to a specific misconception.
+    const errorAnalysis = {
+        q1: { A: 'Misread Detail', B: 'Partial Reading', D: 'Confused Role' },
+        q2: { B: 'Wrong Context', C: 'Chose Antonym', D: 'Confused Action' },
+        q3: { A: 'Wrong Sequence', B: 'Option vs Requirement', D: 'Wrong Sequence' },
+        q4: { A: 'Made Assumption', B: 'Confused Role', C: 'Made Assumption' },
+        q5: { A: 'Too General', C: 'Too Vague', D: 'Misread Purpose' },
+        q6: { A: 'Chose Antonym', B: 'Related Idea', D: 'Inferred Feeling' },
+        q7: { A: 'Exaggerated Fact', B: 'Contradicted Text', D: 'Confused Motive' },
+        q8: { A: 'Contradicted Text', B: 'Plausible Distractor', D: 'Unsupported Assumption' },
+        q9: { A: 'Failed Elimination', C: 'Failed Elimination', D: 'Failed Elimination' },
+        q10: { A: 'Partial Understanding', B: 'Incomplete Answer', D: 'Misread Scope' },
+        q11: { B: 'Unsupported Assumption', C: 'Secondary Detail', D: 'Unsupported Assumption' },
+        q12: { A: 'Too Narrow', C: 'Too Narrow', D: 'Contradicted Text' },
+        q13: { A: 'Related Idea', B: 'Related Idea', C: 'Related Idea' },
+        q14: { A: 'Unsupported Assumption', C: 'Unsupported Assumption', D: 'Unsupported Assumption' },
+        q15: { A: 'Wrong Antecedent', B: 'Wrong Antecedent', D: 'Wrong Antecedent' },
+        q16: { A: 'Not In Text', B: 'Literal Interpretation', D: 'Not In Text' },
+        q17: { B: 'Not In Text', C: 'Over-generalized', D: 'Unsupported Opinion' },
+        q18: { A: 'Failed Elimination', B: 'Failed Elimination', C: 'Failed Elimination' },
+        q19: { A: 'Contradicted Text', B: 'Contradicted Text', D: 'Misread "Preserve"' },
+        q20: { A: 'Too Narrow', C: 'Unlikely Inference', D: 'Literal Interpretation' }
+    };
+
+    const quizForm = document.getElementById('quizForm');
+    const submitButton = document.getElementById('submitBtn');
+    const resultsDiv = document.getElementById('results');
+    const studentNameInput = document.getElementById('studentName');
+
+    submitButton.addEventListener('click', function() {
+        const studentName = studentNameInput.value.trim();
+        if (studentName === '') {
+            alert('Please enter your name before submitting.');
+            studentNameInput.focus();
+            return;
+        }
+
+        if (SCRIPT_URL === 'YOUR_NEW_SCRIPT_URL_HERE') {
+            alert('Error: The SCRIPT_URL has not been set in the HTML file. Please paste your deployed script URL.');
+            return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+        const submissionData = {}; // This will hold the answer and analysis for each question.
+
+        for (const questionId in correctAnswers) {
+            const correctAnswer = correctAnswers[questionId];
+            const userAnswerInput = quizForm.querySelector(`input[name="${questionId}"]:checked`);
+            
+            let userAnswer = 'Not Answered';
+            let analysis = 'Not Answered';
+
+            if (userAnswerInput) {
+                userAnswer = userAnswerInput.value;
+                if (userAnswer === correctAnswer) {
+                    score++;
+                    analysis = 'Correct';
+                } else {
+                    // It's wrong, so let's find the reason.
+                    analysis = errorAnalysis[questionId][userAnswer] || 'Unknown Error';
+                }
+            }
+            
+            // Store both answer and analysis
+            submissionData[questionId] = {
+                answer: userAnswer,
+                analysis: analysis
+            };
+
+            // Visually show correct/incorrect on the page
+            const questionDiv = document.getElementById(questionId);
+            const correctLabel = questionDiv.querySelector(`label[for="${questionId}${correctAnswer.toLowerCase()}"]`);
+            if (correctLabel) { correctLabel.classList.add('correct'); }
+            if (userAnswerInput && userAnswer !== correctAnswer) {
+                 const incorrectLabel = questionDiv.querySelector(`label[for="${userAnswerInput.id}"]`);
+                 if (incorrectLabel) { incorrectLabel.classList.add('incorrect'); }
+            }
+        }
+        
+        const formData = new FormData();
+        formData.append('studentName', studentName);
+        formData.append('score', `${score}/${totalQuestions}`);
+        // Send the entire structured data object as a string
+        formData.append('submissionData', JSON.stringify(submissionData)); 
+
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data); 
+            if(data.result === 'success') {
+                resultsDiv.innerHTML = `<h2>Results for ${studentName}</h2><h3>Your Score: ${score} out of ${totalQuestions}</h3><p>Your submission and analysis have been recorded successfully!</p>`;
+            } else {
+                throw new Error(data.message || 'An unknown error occurred with the script.');
+            }
+        })
+        .catch(error => {
+            console.error('Error during submission:', error);
+            resultsDiv.innerHTML = `<h2>Results for ${studentName}</h2><h3>Your Score: ${score} out of ${totalQuestions}</h3><p style="color:red;">An error occurred during submission: ${error.message}. Your data may not have been saved.</p>`;
+        })
+        .finally(() => {
+            resultsDiv.style.display = 'block';
+            submitButton.textContent = 'Submitted';
+            studentNameInput.disabled = true;
+            quizForm.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = true);
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+</body>
+</html>
